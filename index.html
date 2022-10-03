@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spoilers: Text Column</title>
+  <title>Spoilers: Single Card</title>
   <!-- Import Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,66 +16,98 @@
 
       /* Define larger body text and line height */
       /* Fallback if clamp() isn't supported */
-      font-size: 24px;
+      font-size: 18px;
       /* Smaller font-size on mobile */
-      font-size: clamp(18px, 3vw, 24px);
-      line-height: 1.7;
+      font-size: clamp(16px, 3vw, 20px);
+      line-height: 1.5;
     }
 
-    h1, h2 {
+    h3 {
       /* Display text font with system and generic fallbacks */
       font-family: 'Bebas Neue', Impact, Charcoal, cursive;
-    }
+      font-size: 2rem;
+      text-align: center;
 
-    main {
-      /* Readable line length */
-      max-width: 65ch;
-      /* Centre text on page */
+      /* Spacing content */
+      margin: 0;
+      padding: 0.5rem 1rem;
+
+      /* Adding some grayscale colours */
+      background-color: #aaa;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+    }
+    
+    a.card {
+      /* Shrink wrap link to its content */
+      display: block;
+      width: fit-content;
+
+      /* Centre card on page */
       margin: auto;
-      /* Push content from edge of screen on mobile */
-      padding: 1rem;
     }
 
     a, a:visited {
-      /* change link color from default */
-      color: brown;
+      /* change link color back to black */
+      color: black;
+      text-decoration: none;
     }
 
-    a:hover {
-      /* Add a hover effect for extra spice */
-      color: cadetblue;
-      text-decoration: none;
+    /* Hover effects */
+    a:hover h3 {
+      color: #ddd;
+      background-color: rebeccapurple;
+    }
+
+    a:hover figcaption {
+      background-color: papayawhip;
+    }
+
+    figure {
+      /* Readable line length */
+      max-width: 35ch;
+      margin: 0;
+
+      /* Make card obviously clickable */
+      border: 1px solid darkgrey;
+      box-shadow: 
+        0 1px 1px rgb(0, 0, 0, .2),
+        0 2px 2px rgb(0, 0, 0, .2),
+        0 4px 4px rgb(0, 0, 0, .2),
+        0 8px 8px rgb(0, 0, 0, .2);
+      border-radius: 1rem;
+    }
+
+    figure img {
+      /* Make image behave "normally" */
+      display: block;
+      width: 100%;
+      height: initial;
+    }
+
+    figcaption {
+      margin: 0;
+      padding: 1rem;
+
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
     }
   </style>
 </head>
 <body>
-  <!-- Wrap content in `main` element for screen readers -->
-  <main>
-    <!-- Including h1, h2, p, ul, a, em, strong -->
-    <h1>My First <strike>Pull Request</strike> Closed Issue</h1>
-    <p>The opportunity to make my first contribution to an open project popped up while I was hacking at Josh Collinsworth's <a href="https://github.com/josh-collinsworth/sveltekit-blog-starter/"><code>sveltekit-blog-starter</code></a> repo.</p>
-    <p>Back in June, I found a minor bug in the <code>font-family</code> declaration of the headings. I was hoping to actually submit a <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">Pull Request</a> that fixed the problem but I didn't understand what <code>:where()</code> did (I originally assumed it was a <code>scss</code> function but it's new <code>css</code>).</p>
+  <!-- Link the entire card to a full blog post -->
+  <a class="card" href="https://sait-wbdv.github.io/f22-spoilers-cpnt260-a1/">
+    <!-- Including h3, img, strong, em, -->
+    <!-- Using figure/figcaption instead of article/p for Above and Beyond-->
 
-    <p>The next best thing to a Pull Request is <a href=""></a> submit an issue that provides the info needed to for the maintainers to fix it quickly.</p>
-    <h2>A good issue:</h2>
-    <ul>
-      <li>describes the <strong>problem</strong> with instructions on how to reproduce the bug (with a reproduction, if needed);
-        <!-- Nested list -->
-        <ul>
-          <li>See: <a href="https://youtu.be/dB_YjuAMH3o?t=1348"></a>Things you do that annoy the core SvelteKit team for tips on how to create a good reproduction;</li>
-        </ul>
-      </li>
-      <li>includes potential <strong>causes</strong>;</li>
-      <li>suggests <strong>solutions</strong>.</li>
-    </ul>
-    <h2>Success!</h2>
-    <p>In August, Josh <a href="https://github.com/josh-collinsworth/sveltekit-blog-starter/commit/ca180e6dfa9ad4afc2cb767579ee8f16356e88b0">fixed</a> and <a href="https://github.com/josh-collinsworth/sveltekit-blog-starter/issues/7">closed my Issue</a>! And that's when I learned about these new `css` pseudo-elements:</p>
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:where"><code>:where()</code></a></li>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:is"><code>:is()</code></a></li>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:has"><code>:has()</code></a></li>
-    </ul>
-    <p>Browser support is <em>over 90%!</em></p>
-  </main>
+    <!-- Wrap content in `figure` element for screen readers -->
+    <figure>
+      <h3>My First Closed Issue</h3>
+      <img src="https://picsum.photos/id/1/500/350" alt="Someone (not me) sitting at a laptop" width="500" height="350">
+
+      <!-- Using figcaption instead of p -->
+      <figcaption>Back in June, I found a minor bug of a <code>font-family</code> declaration while working on <strong>Josh Collinsworth's</strong> <code>sveltekit-blog-starter</code> theme. Submitting an Issue took some time but was totally worth it. <strong><em>Read more!</em></strong></figcaption>
+    </figure>
+  </a>
 </body>
 </html>
