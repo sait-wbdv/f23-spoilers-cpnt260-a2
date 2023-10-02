@@ -1,6 +1,6 @@
 # CPNT 260 Assignment 2: Single Card
 Author: Tony Grimes
-Live site: [sait-wbdv.github.io/f22-spoilers-cpnt260-a2](https://sait-wbdv.github.io/f22-spoilers-cpnt260-a2)
+Live site: [sait-wbdv.github.io/f23-spoilers-cpnt260-a2](https://sait-wbdv.github.io/f23-spoilers-cpnt260-a2)
 
 ## Above and Beyond
 I chose the following:
