@@ -5,9 +5,9 @@ Live site: [sait-wbdv.github.io/f23-spoilers-cpnt260-a2](https://sait-wbdv.githu
 ## Above and Beyond
 I chose the following:
 - `figure` and `figcaption`
-    - See lines 104 and 109 in `index.html`
+    - See lines 21 and 26 in `index.html`
 - Use of `clamp()`
-    - See line 21 in `index.html`
+    - See line 9 in `main.css`
 
 ## Attributions
 - Image by [Alejandro Escamilla](https://unsplash.com/photos/LNRyGwIJr5c)
